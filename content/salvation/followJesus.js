@@ -34,7 +34,7 @@ He confidently performed feats of healing
     With authority he rid people of their sickness
 
 Before long, crowds began to follow him
-    But he said, the glory is God’s, and it was
+    But he said, the glory is God's, and it was
 
 Yet it was Jesus that God had confirmed
     By giving him such power in the sight of others
