@@ -1,40 +1,39 @@
 import { Link, useSearchParams } from "expo-router";
 import { ScrollView, StyleSheet, Text, View } from "react-native";
-import { believeInGodEn } from "../../content/salvation/believeInGod";
-import { followJesus } from "../../content/salvation/followJesus";
+import { englishPoemIndex, poemList } from "../../content/allPoems";
 
 const Poem = () => {
   const { chapter, poem } = useSearchParams();
 
   console.info("info", chapter, poem);
 
-  let content = <></>;
-
-  switch (poem) {
-    case "believe-in-god":
-      content = (
-        <View>
-          <Text style={styles.title}>Believe in God</Text>
-          <Text style={styles.content}>{believeInGodEn}</Text>
-        </View>
-      );
-      break;
-    case "follow-jesus":
-      content = (
-        <View>
-          <Text style={styles.title}>Follow Jesus</Text>
-          <Text style={styles.content}>{followJesus}</Text>
-        </View>
-      );
-      break;
+  let poemIndex = [];
+  if (true) {
+    poemIndex = englishPoemIndex;
   }
+
+  const poemContent = poemIndex.filter((po) => po.slug === poem)[0];
+
+  let poemData = null;
+  poemList.forEach((chap) => {
+    chap.items.forEach((item) => {
+      if (item.path === `/${chapter}/${poem}`) {
+        poemData = item;
+      }
+    });
+  });
+
+  console.info("poemData", poemData);
 
   return (
     <ScrollView>
       <Link href="/" style={styles.backLink}>
         Back to Poems
       </Link>
-      <View>{content}</View>
+      <View>
+        <Text style={styles.title}>{poemData?.title}</Text>
+        <Text style={styles.content}>{poemContent?.content}</Text>
+      </View>
     </ScrollView>
   );
 };

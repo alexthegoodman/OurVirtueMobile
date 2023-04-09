@@ -1,4 +1,4 @@
-export const beUnderstadingEn = `
+export const beUnderstandingEn = `
 Your brothers and sisters are weak like you
     They go astray from time to time
 
@@ -13,6 +13,6 @@ Think of your hardships and weaknesses
     We are gentle and thoughtful of each other
 `;
 
-export const beUnderstadingHi = ``;
+export const beUnderstandingHi = ``;
 
-export const beUnderstadingBn = ``;
+export const beUnderstandingBn = ``;
